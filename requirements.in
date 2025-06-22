@@ -1,0 +1,14 @@
+# --- Notion API & Web Requests ---
+requests
+python-dotenv
+
+# --- Web Scraping & Parsing ---
+selenium
+webdriver-manager
+beautifulsoup4
+
+# --- UI & Logging ---
+rich
+tqdm
+
+# --- Data Handling ---
