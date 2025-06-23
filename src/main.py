@@ -6,8 +6,6 @@ from pathlib import Path
 from rich.console import Console
 from rich.logging import RichHandler
 
-# import modules
-
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 # print(f"PROJECT_ROOT: {PROJECT_ROOT}")
 
@@ -25,10 +23,17 @@ def setup_logging():
         ]
     )
 
+setup_logging()
+logger = logging.getLogger(__name__)
+
+# import modules
+from .workflows import execute_test_connection
+
 def main():
     setup_logging()
     console = Console()
     console.print(PROJECT_ROOT)
+    execute_test_connection()
 
 if __name__ == "__main__":
     main()
