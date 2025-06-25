@@ -7,7 +7,7 @@ from rich.console import Console
 from rich.logging import RichHandler
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-# print(f"PROJECT_ROOT: {PROJECT_ROOT}")
+print(f"PROJECT_ROOT: {PROJECT_ROOT}")
 
 def setup_logging():
     log_dir = PROJECT_ROOT / "logs"
@@ -27,14 +27,16 @@ setup_logging()
 logger = logging.getLogger(__name__)
 
 # import modules
-from .workflows import execute_test_connection, execute_delete_blocks
+from .workflows import execute_test_connection, execute_delete_blocks, build_dashboard_layout
 from .config_manager import load_env
 
 def main():
     setup_logging()
     console = Console()
     console.print(PROJECT_ROOT)
+    execute_test_connection()
     execute_delete_blocks()
+    build_dashboard_layout()
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,229 @@
+{
+    "layout": [
+        {
+            "type": "heading_1",
+            "heading_1": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "❗️ Header"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "divider",
+            "divider": {}
+        },
+        {
+            "type": "column_list",
+            "column_list": {
+                "children": [
+                    {
+                        "type": "column",
+                        "column": {
+                            "children": [
+                                {
+                                    "type": "heading_2",
+                                    "heading_2": {
+                                        "rich_text": [
+                                            {
+                                                "type": "text",
+                                                "text": {
+                                                    "content": "⚡️ Quick Capture"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "divider",
+                                    "divider": {}
+                                },
+                                {
+                                    "type": "callout",
+                                    "callout": {
+                                        "icon": {
+                                            "type": "emoji",
+                                            "emoji": "💡"
+                                        },
+                                        "rich_text": [
+                                            {
+                                                "type": "text",
+                                                "text": {
+                                                    "content": "Add new button for Quick Capture here..."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "heading_2",
+                                    "heading_2": {
+                                        "rich_text": [
+                                            {
+                                                "type": "text",
+                                                "text": {
+                                                    "content": "🧭 Navigation"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "divider",
+                                    "divider": {}
+                                },
+                                {
+                                    "type": "callout",
+                                    "callout": {
+                                        "icon": {
+                                            "type": "emoji",
+                                            "emoji": "💡"
+                                        },
+                                        "rich_text": [
+                                            {
+                                                "type": "text",
+                                                "text": {
+                                                    "content": "Add navigation list here..."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "heading_2",
+                                    "heading_2": {
+                                        "rich_text": [
+                                            {
+                                                "type": "text",
+                                                "text": {
+                                                    "content": "🔗 Useful links"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "divider",
+                                    "divider": {}
+                                },
+                                {
+                                    "type": "callout",
+                                    "callout": {
+                                        "icon": {
+                                            "type": "emoji",
+                                            "emoji": "💡"
+                                        },
+                                        "rich_text": [
+                                            {
+                                                "type": "text",
+                                                "text": {
+                                                    "content": "Add useful links here..."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "column",
+                        "column": {
+                            "children": [
+                                {
+                                    "type": "heading_2",
+                                    "heading_2": {
+                                        "rich_text": [
+                                            {
+                                                "type": "text",
+                                                "text": {
+                                                    "content": "📚 Course Schedule"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "divider",
+                                    "divider": {}
+                                },
+                                {
+                                    "type": "callout",
+                                    "callout": {
+                                        "icon": {
+                                            "type": "emoji",
+                                            "emoji": "💡"
+                                        },
+                                        "rich_text": [
+                                            {
+                                                "type": "text",
+                                                "text": {
+                                                    "content": "Add linked database view"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "heading_2",
+                                    "heading_2": {
+                                        "rich_text": [
+                                            {
+                                                "type": "text",
+                                                "text": {
+                                                    "content": "🗓️ Calendar"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "divider",
+                                    "divider": {}
+                                },
+                                {
+                                    "type": "callout",
+                                    "callout": {
+                                        "icon": {
+                                            "type": "emoji",
+                                            "emoji": "💡"
+                                        },
+                                        "rich_text": [
+                                            {
+                                                "type": "text",
+                                                "text": {
+                                                    "content": "Add linked database view"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "divider",
+            "divider": {}
+        },
+        {
+            "type": "heading_2",
+            "heading_2": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "❗️ Footer"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

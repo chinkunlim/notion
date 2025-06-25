@@ -4,6 +4,7 @@ from typing import Dict, List, Any, Optional
 
 logger = logging.getLogger(__name__)
 
+
 class NotionApiClient:
     def __init__(self, api_key: str):
         self.api_key = api_key
@@ -11,27 +12,33 @@ class NotionApiClient:
         self.headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json",
-            "Notion-Version": "2022-06-28"
+            "Notion-Version": "2022-06-28",
         }
 
-    def _send_request(self, method: str, endpoint: str, payload: Optional[Dict[str, Any]] = None) -> Optional[requests.Response]:
-            url = f"{self.base_url}/{endpoint}"
-            try:
-                response = requests.request(method, url, headers=self.headers, json=payload)
-                response.raise_for_status()
-                return response
-            except requests.exceptions.RequestException as e:
-                logger.error(f"API 請求失敗: {e}")
-                if hasattr(e, 'response') and e.response is not None:
-                    logger.error(f"回應內容: {e.response.text}")
-                return None
-            
+    def _send_request(
+        self, method: str, endpoint: str, payload: Optional[Dict[str, Any]] = None
+    ) -> Optional[requests.Response]:
+        url = f"{self.base_url}/{endpoint}"
+        try:
+            response = requests.request(method, url, headers=self.headers, json=payload)
+            response.raise_for_status()
+            return response
+        except requests.exceptions.RequestException as e:
+            logger.error(f"API 請求失敗: {e}")
+            if hasattr(e, "response") and e.response is not None:
+                logger.error(f"回應內容: {e.response.text}")
+            return None
+
     def test_connection(self):
         response = self._send_request("GET", "users/me")
         return response.json() if response else None
-    
+
     def get_block_children(self, block_id):
-        return self._send_request("GET", f"blocks/{block_id}/children")         
-        
+        return self._send_request("GET", f"blocks/{block_id}/children")
+
     def delete_block(self, block_id):
         return self._send_request("DELETE", f"blocks/{block_id}")
+
+    def append_block_children(self, parent_page_id, blocks):
+        payload = {"children": blocks}
+        return self._send_request("PATCH", f"blocks/{parent_page_id}/children", payload)
