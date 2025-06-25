@@ -29,3 +29,9 @@ class NotionApiClient:
     def test_connection(self):
         response = self._send_request("GET", "users/me")
         return response.json() if response else None
+    
+    def get_block_children(self, block_id):
+        return self._send_request("GET", f"blocks/{block_id}/children")         
+        
+    def delete_block(self, block_id):
+        return self._send_request("DELETE", f"blocks/{block_id}")

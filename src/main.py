@@ -27,13 +27,14 @@ setup_logging()
 logger = logging.getLogger(__name__)
 
 # import modules
-from .workflows import execute_test_connection
+from .workflows import execute_test_connection, execute_delete_blocks
+from .config_manager import load_env
 
 def main():
     setup_logging()
     console = Console()
     console.print(PROJECT_ROOT)
-    execute_test_connection()
+    execute_delete_blocks()
 
 if __name__ == "__main__":
     main()

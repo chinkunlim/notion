@@ -1,23 +1,42 @@
 # import libraries
 import os
+import sys
 import logging
 from dotenv import load_dotenv, set_key, find_dotenv
+from dataclasses import dataclass
 from typing import Dict
+from rich.console import Console
 
 logger = logging.getLogger(__name__)
+console = Console()
+
+@dataclass
+class NotionConfig:
+    api_key: str
+    parent_page_id: str
 
 def load_env():
     dotenv_path = find_dotenv()
     if not dotenv_path:
         logger.warning("Couldn't find .env file")
-        return False
+        sys.exit()
+
     load_dotenv(dotenv_path)
     logger.info(f"read .env file successfully")
-    return True
+
+    config = get_env_key()
+    api_key=config.get("NOTION_API_KEY")
+    parent_page_id=config.get("PARENT_PAGE_ID")
+
+    if not api_key or not parent_page_id:
+        logger.critical("NOTION_KEY or PARENT_PAGE_ID not found!")
+        sys.exit()
+    
+    return api_key, parent_page_id
 
 def get_env_key():
     config_keys = [
-        "NOTION_KEY",
+        "NOTION_API_KEY",
         "PARENT_PAGE_ID",
         "DASHBOARD_TITLE",
         "SUBJECT_DATABASE_ID",
